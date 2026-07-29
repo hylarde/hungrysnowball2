@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 202372273}
   - component: {fileID: 202372277}
   - component: {fileID: 202372278}
+  - component: {fileID: 202372279}
   m_Layer: 0
   m_Name: bola(player)
   m_TagString: Untagged
@@ -289,6 +290,21 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.50000006
+--- !u!114 &202372279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202372272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18f23f624c85be4fa0ba7ff79a22ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::xplevel
+  currentXp: 6
+  xp: 0
+  vida: 3
 --- !u!1 &268893489
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +484,7 @@ GameObject:
   - component: {fileID: 548743579}
   - component: {fileID: 548743582}
   - component: {fileID: 548743583}
+  - component: {fileID: 548743584}
   m_Layer: 0
   m_Name: Direitaobjeto
   m_TagString: Untagged
@@ -595,7 +612,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -638,6 +655,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &548743584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548743578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fff54ee622b2f41ae4178af6a07504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::enemyxp
+  enemyXp: 5
 --- !u!1 &579521270
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +807,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -817,6 +847,7 @@ GameObject:
   - component: {fileID: 727943407}
   - component: {fileID: 727943410}
   - component: {fileID: 727943411}
+  - component: {fileID: 727943412}
   m_Layer: 0
   m_Name: MeioObjeto
   m_TagString: Untagged
@@ -944,7 +975,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -987,6 +1018,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &727943412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727943406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fff54ee622b2f41ae4178af6a07504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::enemyxp
+  enemyXp: 5
 --- !u!1 &728580361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,6 +1633,7 @@ GameObject:
   - component: {fileID: 1511583011}
   - component: {fileID: 1511583014}
   - component: {fileID: 1511583015}
+  - component: {fileID: 1511583016}
   m_Layer: 0
   m_Name: EsquerdaObjeto
   m_TagString: Untagged
@@ -1716,7 +1761,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1759,6 +1804,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1511583016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511583010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fff54ee622b2f41ae4178af6a07504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::enemyxp
+  enemyXp: 5
 --- !u!1 &1663407447
 GameObject:
   m_ObjectHideFlags: 0
