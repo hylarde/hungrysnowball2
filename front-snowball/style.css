@@ -1,0 +1,49 @@
+
+
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    background: #ffff;
+    border: none;
+    color: black;
+    padding: 15px;
+    font-family: 'Press Start 2P', monospace;
+    width: 220px;
+    height: 50px;
+    margin-top: 500px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    font-size: 18px;   
+    
+}
+.button:hover{
+    color: #ffff;
+    background-color: #a5f2f3;
+    box-shadow: 0 6px 0 #ffff;
+    background-image: url(https://img.freepik.com/vetores-premium/padrao-de-fundo-de-blocos-de-gelo-de-pixel-retro-nivel-de-jogo-de-console-pixel-cubico-tex_384401-4679.jpg);
+}
+
+.footer{
+    margin-top: 200px;
+    padding: 10px;
+    font-size:24px ;
+    width: 1600px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 15px;
+    opacity: 50%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/001/931/000/non_2x/light-blue-background-with-rectangles-vector.jpg)
+}
+
+.paragrafo{
+font-family: 'Press Start 2P', monospace;
+color: black;
+opacity: 100%;
+}

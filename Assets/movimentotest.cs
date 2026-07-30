@@ -1,5 +1,5 @@
 using UnityEngine;
-
+// Inimigo que se move em um ângulo de 25 graus e cresce até um tamanho definido
 public class MoverECrescer : MonoBehaviour
 {
     [Header("Movimento")]
