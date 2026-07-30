@@ -487,7 +487,7 @@ GameObject:
   - component: {fileID: 548743584}
   m_Layer: 0
   m_Name: Direitaobjeto
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -850,7 +850,7 @@ GameObject:
   - component: {fileID: 727943412}
   m_Layer: 0
   m_Name: MeioObjeto
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -921,7 +921,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.03425944, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1030,7 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2fff54ee622b2f41ae4178af6a07504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enemyxp
-  enemyXp: 5
+  enemyXp: 20
 --- !u!1 &728580361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,7 +1636,7 @@ GameObject:
   - component: {fileID: 1511583016}
   m_Layer: 0
   m_Name: EsquerdaObjeto
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
