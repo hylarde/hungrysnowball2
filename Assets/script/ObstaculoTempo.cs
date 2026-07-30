@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GeracaoAleatoriaDeObstaculos : MonoBehaviour
+public class ObstaculoTempo : MonoBehaviour
 {
     public GameObject prefabObstaculos;
     public float intervaloTempo = 1.5f;
@@ -15,7 +15,7 @@ public class GeracaoAleatoriaDeObstaculos : MonoBehaviour
         cronometro += Time.deltaTime;
         if (cronometro >= intervaloTempo)
         {
-            cronometro = 0;
+            cronometro = 0f;
             GerarObstaculo();
         }
     }
@@ -23,7 +23,8 @@ public class GeracaoAleatoriaDeObstaculos : MonoBehaviour
     {
         float posicaoX = Random.Range(posicaoEsquerda, posicaoDireita);
         Vector3 posicaoGeracao = new Vector3(posicaoX, transform.position.y, transform.position.z);
-        Instantiate(prefabObstaculos, posicaoGeracao, Quaternion.identity);
+        GameObject novoObjeto = Instantiate(prefabObstaculos, posicaoGeracao, Quaternion.identity);
+
     }
 
 }
