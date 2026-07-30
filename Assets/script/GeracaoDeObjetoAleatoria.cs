@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class GeracaoDeObjetoAleatoria : MonoBehaviour
 {
-   public GameObject[] listaDeObstaculos;
+    public GameObject[] listaDeObstaculos;
+    public GameObject linhadearvores;
+    public Vector3 posicaoarvore;
+    public Vector3 posicaoarvore2;
+    public float cronometroarvore = 0;
+    public float intervaloarvore = 3;
     public float intervaloTempo = 1f;
     private float cronometro = 0;
 
@@ -10,6 +15,7 @@ public class GeracaoDeObjetoAleatoria : MonoBehaviour
     public float posicaoEsquerda = -3f;
 
     public int ContadorSpraw = 0;
+    private int ordemAtual;
 
     // Update is called once per frame
     void Update()
@@ -20,15 +26,22 @@ public class GeracaoDeObjetoAleatoria : MonoBehaviour
             cronometro = 0f;
             GerarObstaculo();
         }
+        cronometroarvore += Time.deltaTime;
+        if (cronometroarvore >= intervaloarvore)
+        {
+            cronometroarvore = 0f;
+            GerarArvore();
+        }
     }
     void GerarObstaculo()
-    { ContadorSpraw++;
+    {
+        ContadorSpraw++;
         int limiteSorteio = 0;
 
         if (ContadorSpraw <= 20)
         {
             limiteSorteio = 2;
-          Debug.Log("ContadorSpraw <= 20: " + ContadorSpraw);
+            Debug.Log("ContadorSpraw <= 20: " + ContadorSpraw);
         }
 
         else if (ContadorSpraw > 20 && ContadorSpraw <= 40)
@@ -53,4 +66,25 @@ public class GeracaoDeObjetoAleatoria : MonoBehaviour
 
     }
 
+    void GerarArvore()
+    {
+        GameObject novoObjeto = Instantiate(linhadearvores, posicaoarvore, Quaternion.identity);
+        GameObject novoObjeto2 = Instantiate(linhadearvores, posicaoarvore2, Quaternion.identity);
+
+        // Altera todos os SpriteRenderers da primeira árvore
+        SpriteRenderer[] sprites1 = novoObjeto.GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer sr in sprites1)
+        {
+            sr.sortingOrder = ordemAtual;
+        }
+
+        // Altera todos os SpriteRenderers da segunda árvore
+        SpriteRenderer[] sprites2 = novoObjeto2.GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer sr in sprites2)
+        {
+            sr.sortingOrder = ordemAtual - 1;
+        }
+
+        ordemAtual -= 2;
+    }
 }
