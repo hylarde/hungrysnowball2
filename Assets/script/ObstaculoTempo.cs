@@ -1,10 +1,6 @@
 using UnityEngine;
 
-<<<<<<< HEAD
-public class GeracaoAleatoriaDeObstaculos2 : MonoBehaviour
-=======
 public class ObstaculoTempo : MonoBehaviour
->>>>>>> 90702f90217c268bae1b35f4243bca035095d423
 {
     public GameObject prefabObstaculos;
     public float intervaloTempo = 1.5f;
