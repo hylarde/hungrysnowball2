@@ -1,13 +1,58 @@
-
-
-
+*, *::before, *::after {/*O navegador tem um valor adicionado de margin e padding*/
+  box-sizing: border-box; /*especifica o tamanho da largura e altura geral do html*/
+  margin: 0;
+  padding: 0;
+}
 
 body{
+    /*se der ruim a img na telaInicial, volte a imagem para cá*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain; /* ou cover */
+    background-color: #D4EEEE;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+
+    
 }
+
+
+
+.main{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: center;
+    gap: 2rem; 
+    margin-top: auto;
+    padding-bottom: 5vh;
+    
+
+}
+
+
+.buttonRein{
+    background: #ffff;
+    border: none;
+    color: black;
+    padding: 15px;
+    font-family: 'Press Start 2P', monospace;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;   
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+}
+.buttonRein:hover{
+    color: BLACK;
+    background-color: #a5f2f3;
+    box-shadow: 0 6px 0 #ffff;
+    background-image: url(https://img.freepik.com/vetores-premium/padrao-de-fundo-de-blocos-de-gelo-de-pixel-retro-nivel-de-jogo-de-console-pixel-cubico-tex_384401-4679.jpg);
+}
+
 
 .button{
     background: #ffff;
@@ -15,35 +60,95 @@ body{
     color: black;
     padding: 15px;
     font-family: 'Press Start 2P', monospace;
-    width: 220px;
-    height: 50px;
-    margin-top: 500px;
     border-radius: 50px;
     transition: background-color 0.3s ease;
-    font-size: 18px;   
+    font-size: 1rem;   
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.button, .buttonRein{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
     
 }
+
 .button:hover{
-    color: #ffff;
+    color: BLACK;
     background-color: #a5f2f3;
     box-shadow: 0 6px 0 #ffff;
     background-image: url(https://img.freepik.com/vetores-premium/padrao-de-fundo-de-blocos-de-gelo-de-pixel-retro-nivel-de-jogo-de-console-pixel-cubico-tex_384401-4679.jpg);
 }
 
 .footer{
-    margin-top: 200px;
-    padding: 10px;
-    font-size:24px ;
-    width: 1600px;
-    height: 100px;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+    font-size:0.8rem ;
+    min-width: 90vw;
     border-radius: 15px;
-    opacity: 50%;
-    background-image: url(https://static.vecteezy.com/system/resources/previews/001/931/000/non_2x/light-blue-background-with-rectangles-vector.jpg)
+    margin: 1rem;
+    opacity: 80%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/001/931/000/non_2x/light-blue-background-with-rectangles-vector.jpg);
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+    
 }
 
-.paragrafo{
+.parP,.parS{
 font-family: 'Press Start 2P', monospace;
-color: black;
-opacity: 100%;
+
+
 }
+
+.parP{
+    font-weight: bold;
+}
+
+.escondido{
+    display: none !important;
+}
+
+.iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+#telaJogo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#telaInicial{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    background-image:url("./imagens/titulo.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+}
+
+#imagemResult{
+    max-width: 90vw;      /* ocupa no máximo 70% da largura */
+    max-height: 90vh;     /* ocupa no máximo 70% da altura */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    
+}
+
+
