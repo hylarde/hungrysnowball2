@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ExampleClass : MonoBehaviour
+public class ExampleClass2 : MonoBehaviour
 {
     public float speed = 5f;
 

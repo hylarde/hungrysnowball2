@@ -1,10 +1,5 @@
 using UnityEngine;
-
-<<<<<<< HEAD
-public class GeracaoAleatoriaDeObstaculos2 : MonoBehaviour
-=======
-public class ObstaculoTempo : MonoBehaviour
->>>>>>> 90702f90217c268bae1b35f4243bca035095d423
+public class ObstaculoTempo2 : MonoBehaviour
 {
     public GameObject prefabObstaculos;
     public float intervaloTempo = 1.5f;
@@ -13,7 +8,7 @@ public class ObstaculoTempo : MonoBehaviour
     public float posicaoDireita = 3f;
     public float posicaoEsquerda = -3f;
 
-    // Update is called once per frame
+    // Update is called once per frames
     void Update()
     {
         cronometro += Time.deltaTime;
