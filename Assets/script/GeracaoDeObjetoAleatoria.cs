@@ -1,8 +1,10 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class GeracaoDeObjetoAleatoria : MonoBehaviour
 {
     public GameObject[] listaDeObstaculos;
+    public GameObject montanhaPrefab;
     public GameObject linhadearvores;
     public Vector3 posicaoarvore;
     public Vector3 posicaoarvore2;
@@ -15,7 +17,9 @@ public class GeracaoDeObjetoAleatoria : MonoBehaviour
     public float posicaoEsquerda = -3f;
 
     public int ContadorSpraw = 0;
-    private int ordemAtual;
+    private int ordemAtual = 0;
+    private bool jogoFinalizado = false;
+
 
     // Update is called once per frame
     void Update()
@@ -32,27 +36,49 @@ public class GeracaoDeObjetoAleatoria : MonoBehaviour
             cronometroarvore = 0f;
             GerarArvore();
         }
+            if (jogoFinalizado == true) return;
+
+            cronometro += Time.deltaTime;
+            if (cronometro >= intervaloTempo)
+            {
+                cronometro = 0f;
+                GerarObstaculo();
+            }
+        
     }
-    void GerarObstaculo()
+    async Task GerarObstaculo()
     {
+        if (jogoFinalizado) return;
         ContadorSpraw++;
         int limiteSorteio = 0;
-
-        if (ContadorSpraw <= 20)
+        if (ContadorSpraw > 45)
         {
-            limiteSorteio = 2;
-            Debug.Log("ContadorSpraw <= 20: " + ContadorSpraw);
+
+            Vector3 posMontanha = new Vector3(0, 7, transform.position.z);
+
+            Instantiate(montanhaPrefab, posMontanha, Quaternion.identity);
+
+            jogoFinalizado = true;
+            Debug.Log("Montanha final gerada! Gerador desligado.");
+
+            return;
         }
 
-        else if (ContadorSpraw > 20 && ContadorSpraw <= 40)
+        if (ContadorSpraw <= 15)
+        {
+            limiteSorteio = 2;
+            Debug.Log("ContadorSpraw <= 15: " + ContadorSpraw);
+        }
+
+        else if (ContadorSpraw > 15 && ContadorSpraw <= 30)
         {
             limiteSorteio = 4;
-            Debug.Log("ContadorSpraw > 20 && ContadorSpraw <= 40: " + ContadorSpraw);
+            Debug.Log("ContadorSpraw > 15 && ContadorSpraw <= 30: " + ContadorSpraw);
         }
         else
         {
             limiteSorteio = listaDeObstaculos.Length;
-            Debug.Log("ContadorSpraw > 40: " + ContadorSpraw);
+            Debug.Log("ContadorSpraw > 30: " + ContadorSpraw);
         }
         int indiceAleatorio = Random.Range(0, limiteSorteio);
         GameObject obstaculoSorteado = listaDeObstaculos[indiceAleatorio];
